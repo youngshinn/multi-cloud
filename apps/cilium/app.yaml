@@ -9,48 +9,43 @@ spec:
     namespace: kube-system
     server: https://kubernetes.default.svc
   sources:
-    repoURL: https://helm.cilium.io/
-    targetRevision: 1.16.5
-    chart: cilium
-    helm:
-      valueFiles:
-      - $values/values/cilium/values.yaml
-  - ref: values
-    repoURL: https://github.com/youngshinn/multi-cloud.git
-    targetRevision: HEAD
+    - repoURL: https://helm.cilium.io/
+      targetRevision: 1.16.5
+      chart: cilium
+      helm:
+        valueFiles:
+          - $values/values/cilium/values.yaml
+    - ref: values
+      repoURL: https://github.com/youngshinn/multi-cloud.git
+      targetRevision: HEAD
 
   # Cilium은 특정 리소스가 out of sync가 많이 발생합니다
   # 무시를 위해 아래 내용을 추가할 수 있습니다
   ignoreDifferences:
-  - group: apps
-    kind: DaemonSet
-    name: cilium
-    namespace: kube-system
-    jsonPointers:
-    - /spec/template/spec/containers/0/volumeMounts
-  - group: apps
-    kind: DaemonSet
-    name: cilium-envoy
-    namespace: kube-system
-    jsonPointers:
-    - /spec/template/spec/containers/0/volumeMounts
-  - kind: Secret
-    name: cilium-ca
-    namespace: kube-system
-    jsonPointers:
-    - /data
-  - kind: Secret
-    name: cilium-ca
-    namespace: kube-system
-    jsonPointers:
-    - /data
-  - kind: Secret
-    name: hubble-relay-client-certs
-    namespace: kube-system
-    jsonPointers:
-    - /data
-  - kind: Secret
-    name: hubble-server-certs
-    namespace: kube-system
-    jsonPointers:
-    - /data
+    - group: apps
+      kind: DaemonSet
+      name: cilium
+      namespace: kube-system
+      jsonPointers:
+        - /spec/template/spec/containers/0/volumeMounts
+    - group: apps
+      kind: DaemonSet
+      name: cilium-envoy
+      namespace: kube-system
+      jsonPointers:
+        - /spec/template/spec/containers/0/volumeMounts
+    - kind: Secret
+      name: cilium-ca
+      namespace: kube-system
+      jsonPointers:
+        - /data
+    - kind: Secret
+      name: hubble-relay-client-certs
+      namespace: kube-system
+      jsonPointers:
+        - /data
+    - kind: Secret
+      name: hubble-server-certs
+      namespace: kube-system
+      jsonPointers:
+        - /data
