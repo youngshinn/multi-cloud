@@ -1,0 +1,8 @@
+hubble:
+  relay:
+    enabled: true
+  ui:
+    enabled: true
+ipam:
+  mode: kubernetes
+mtu: 1340

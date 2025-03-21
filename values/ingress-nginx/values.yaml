@@ -1,0 +1,10 @@
+controller:
+  hostNetwork: true
+  kind: DaemonSet
+  service:
+    type: ClusterIP
+  dnsPolicy: ClusterFirstWithHostNet
+  tolerations:
+    - key: "gateway"
+      effect: "NoExecute"
+      operator: "Exists"
