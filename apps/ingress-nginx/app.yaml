@@ -6,11 +6,9 @@ metadata:
 spec:
   project: default
   destination:  
-    name: ''
     namespace: ingress-nginx
     server: https://kubernetes.default.svc
   sources:
-  - path: ''
     repoURL: https://kubernetes.github.io/ingress-nginx
     targetRevision: 4.12.0
     chart: ingress-nginx
