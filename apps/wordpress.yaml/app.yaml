@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wordpress
+  namespace: argo
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  project: default
+  source:
+    path: manifests/wordpress
+    repoURL: https://github.com/youngshinn/multi-cloud.git
+    targetRevision: HEAD
