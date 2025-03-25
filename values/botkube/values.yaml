@@ -4,11 +4,11 @@ communications:
   'default-group':
     discord:
       enabled: true
-      token: "{{ .Values.secret.discordToken }}" # 토큰 입력
-      botID: "{{ .Values.secret.discordBotID }}" # botID 입력
+      token: "${{ secrets.DISCORD_BOT_TOKEN }}"
+      botID: "${{ secrets.DISCORD_BOT_ID }}" # botID 입력
       channels:
         'default':
-          id: "{{ .Values.secret.discordChannelID }}" # channel id 입력
+          id: "${{ secrets.DISCORD_CHANNEL_ID }}" # channel id 입력
 executors:
   k8s-default-tools:
     botkube/kubectl:
