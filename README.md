@@ -2,7 +2,6 @@
 
 ---
 
-```markdown
 #  Hybrid Multi-Cloud Infrastructure with WireGuard, Kubernetes & Argo CD
 
 > 로컬 VM ↔ Oracle Cloud 연동 기반 VPC 구성 및 GitOps 기반 클러스터 환경 구축
