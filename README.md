@@ -29,9 +29,9 @@
 
 ##  시스템 아키텍처
 
-```
+
 ![Image](https://github.com/user-attachments/assets/aca75c30-3f80-4670-8d30-08430018b868)
----
+
 
 ##  구축 절차
 
